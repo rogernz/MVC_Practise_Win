@@ -1,0 +1,38 @@
+﻿
+
+
+@model MVCListBoxTrans.Models.TweetViewModel
+@{
+    ViewBag.Title = "Twitter";
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<hgroup class="title">
+    <h2>What's happening</h2>
+</hgroup>
+<div style="width: 600px; border: 1px solid silver">
+    @using (Ajax.BeginForm("AddTweet", "Tweet", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "AllTweets" }))
+    {
+        <div style="width: 600px; border-width: 1px">
+            @Html.TextAreaFor(md => md.Tweet.Text)
+            <input type="submit" value="Add" style="width: 70px; font-size: 12px" />
+        </div>
+        <div id="AllTweets">
+            @{
+                Html.Partial("_AllTweets", Model);
+            }
+        </div>
+
+                }
+</div>
+
+
+
+
+
+
+
+
+
+
+

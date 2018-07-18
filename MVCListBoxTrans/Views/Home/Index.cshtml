@@ -1,0 +1,85 @@
+﻿@model MVCListBoxTrans.Models.ListBoxModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<html>
+<head>
+    <title>Index</title>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+
+        td {
+            width: 33%;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+
+    @using (Html.BeginForm("Index", "Home",FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>
+
+
+                    @Html.Label("Left Item Lists:")
+                    <br />
+                    <br />
+  
+                    @Html.ListBoxFor(m => m.LeftSelectItemID,
+                    new MultiSelectList(Model.LeftListBoxItems, "Id",
+                    "Name", Model.LeftSelectItemID),
+                    new { size = "20", style = "height:450px;width:320px" })
+
+
+                    
+
+                    <br />
+
+                    <input type="submit" value="ToRight" name="ToRight"
+                           id="ToRight" />
+
+                </td>
+                <td>
+
+
+                    @Html.Label("Right Item Lists:")
+                    <br />
+                    <br />
+                    @Html.ListBoxFor(m => m.RightSelectItemID,
+                    new MultiSelectList(Model.RightListBoxItems, "Id",
+                    "Name", Model.RightSelectItemID),
+                    new { size = "20", style = "height:450px;width:320px" })
+
+                    <br />
+
+                    <input type="submit" value="ToLeft" name="ToLeft"
+                           id="ToLeft" />
+
+                </td>
+
+                <td></td>
+            </tr>
+        </table>
+        @Html.HiddenFor(model=>model.SavedLeftInfo)
+        @Html.HiddenFor(model => model.SavedRightInfo)
+
+
+
+    }
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,23 @@
+﻿@model MVCListBoxTrans.Models.EmployViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+   
+</p>
+
+
+    
+        @using (Html.BeginForm())
+        {
+            @Html.ListBoxFor(x => x.selectedEmp, Model.empList,
+                    new { size = "20", style = "height:450px;width:320px" })
+            <br /><br />
+            <input type="submit" value="Submit" />
+        }
+
+
