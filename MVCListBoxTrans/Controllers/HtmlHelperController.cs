@@ -27,6 +27,12 @@ namespace MVCListBoxTrans.Controllers
             EVM.empList = list;
             return View(EVM);
         }
+
+        public ActionResult GetResult(EmployViewModel model)
+        {
+            return RedirectToAction("Index");
+        }
+
         [HttpPost]
         public string Index(FormCollection form)
         {

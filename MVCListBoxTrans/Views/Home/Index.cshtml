@@ -25,7 +25,7 @@
 
 
 
-    @using (Html.BeginForm("Index", "Home",FormMethod.Post))
+    @using (Html.BeginForm("Index", "Home", new { ListBoxModel = Model }, FormMethod.Post))
     {
         <table>
             <tr>
@@ -35,14 +35,13 @@
                     @Html.Label("Left Item Lists:")
                     <br />
                     <br />
-  
+
                     @Html.ListBoxFor(m => m.LeftSelectItemID,
                     new MultiSelectList(Model.LeftListBoxItems, "Id",
                     "Name", Model.LeftSelectItemID),
-                    new { size = "20", style = "height:450px;width:320px" })
+                    new { id = "lbTags",size = "20", style = "height:450px;width:320px" })
 
 
-                    
 
                     <br />
 

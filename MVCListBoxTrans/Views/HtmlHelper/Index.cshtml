@@ -5,19 +5,31 @@
 }
 
 <h2>Index</h2>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
 
 <p>
-   
+
 </p>
 
 
-    
-        @using (Html.BeginForm())
-        {
-            @Html.ListBoxFor(x => x.selectedEmp, Model.empList,
-                    new { size = "20", style = "height:450px;width:320px" })
-            <br /><br />
-            <input type="submit" value="Submit" />
-        }
+
+@using (Html.BeginForm("GetResult", "HtmlHelper", FormMethod.Post, new { id = "myForm" }))
+{
+    @Html.ListBoxFor(x => x.selectedEmp, Model.empList,
+            new { id = "myList", size = "20", style = "height:450px;width:320px" })
+    <br /><br />
+    <input type="submit" value="Submit" />
+}
 
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#myForm").submit(function (e) {
+
+                $("#myList option").prop("selected", truef);
+
+            });
+
+        });
+    </script>

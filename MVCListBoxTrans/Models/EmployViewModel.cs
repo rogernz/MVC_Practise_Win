@@ -10,6 +10,6 @@ namespace MVCListBoxTrans.Models
     public class EmployViewModel
     {
         public IEnumerable<SelectListItem> empList { get; set; }
-        public IEnumerable<SelectListItem> selectedEmp { get; set; }
+        public List<string> selectedEmp { get; set; }
     }
 }

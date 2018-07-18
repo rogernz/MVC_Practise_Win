@@ -152,11 +152,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HtmlHelperController.cs" />
+    <Compile Include="Controllers\ModelStateController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\TweetController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AddUserVM.cs" />
     <Compile Include="Models\EmployViewModel.cs" />
     <Compile Include="Models\item.cs" />
     <Compile Include="Models\ListBoxModel.cs" />
@@ -208,6 +210,7 @@
     <Content Include="Views\Shared\_AllTweets.cshtml" />
     <Content Include="Views\Person\Index.cshtml" />
     <Content Include="Views\Shared\_PersonShow.cshtml" />
+    <Content Include="Views\ModelState\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
